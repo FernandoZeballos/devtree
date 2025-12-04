@@ -1,7 +1,8 @@
-import mongoose,{ Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 
-export interface IUser{
+export interface IUser {
+    handle: string
     name: string
     email: string
     password: string
@@ -9,6 +10,13 @@ export interface IUser{
 }
 
 const userSchema = new Schema({
+    handle: {
+        type: String,
+        required: true,
+        trim: true,
+        lowercase: true,
+        unique: true
+    },
     name: {
         type: String, // ¡Aquí usamos el Constructor de JS!
         required: true,
@@ -25,7 +33,7 @@ const userSchema = new Schema({
         required: true,
         trim: true
     },
-}) 
+})
 
 // 3. Creamos el Modelo
 const User = mongoose.model<IUser>('User', userSchema);
