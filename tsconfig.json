@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "lib": ["ESNext"],
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "target": "es2020", // O una versión moderna
+        "strict": true,
+        "sourceMap": true,
+        "esModuleInterop": true, // Recomendado para importaciones como `import mongoose from 'mongoose'`
+        "declaration": true,
+    },
+"include":["src/**/*.ts"]
+}
