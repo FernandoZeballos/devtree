@@ -63,9 +63,14 @@ export const getUser = async (req: Request, res: Response) => {
 export const updateProfile = async (req: Request, res: Response) => {
   try {
     const { description } = req.body;
+
+    if (!req.user) {
+      const error = new Error("No Autorizado");
+      return res.status(401).json({ error: error.message });
+    }
     const handle = slug(req.body.handle, "");
     const handleExists = await User.findOne({ handle });
-    if (handleExists) {
+    if (handleExists && handleExists.email !== req.user.email) {
       const error = new Error("El nombre de usuario no disponible");
       return res.status(409).json({ error: error.message });
     }
