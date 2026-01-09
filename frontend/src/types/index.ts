@@ -4,7 +4,7 @@ export type User = {
     email: string
     password: string
     _id: string
-
+    description: string
 }
 
 export type RegisterForm = Pick<User, 'handle' | 'email' | 'name'> & {
@@ -15,3 +15,5 @@ export type RegisterForm = Pick<User, 'handle' | 'email' | 'name'> & {
 export type LoginForm = Pick<User, 'email'> & {
     password: string
 }
+
+export type UserProfileForm = Pick<User, 'handle' | 'description'>
