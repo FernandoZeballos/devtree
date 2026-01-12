@@ -49,7 +49,7 @@ Si deseas correr este proyecto en tu entorno local:
 1.  **Clonar el repositorio**
 
     ```bash
-    git clone https://github.com/TU-USUARIO/devtree.git
+    git clone https://github.com/FernandoZeballos/devtree.git
     cd devtree
     ```
 
