@@ -8,6 +8,7 @@ import ProfileView from "./views/ProfileView";
 import HandleView from "./views/HandleView";
 import NotFoundView from "./views/NotFoundView";
 import HomeView from "./views/HomeView";
+import QRCodeView from "./views/QRCodeView";
 
 export default function Router() {
   return (
@@ -21,6 +22,7 @@ export default function Router() {
         <Route path="admin" element={<AppLayout />}>
           <Route index={true} element={<LinkTreeView />} />
           <Route path="profile" element={<ProfileView />} />
+          <Route path="qr" element={<QRCodeView />} />
         </Route>
 
         <Route path="/:handle" element={<AuthLayout />}>
