@@ -5,6 +5,7 @@ import {
   getUser,
   getUserByHandle,
   login,
+  searchByHandle,
   updateProfile,
   uploadImage,
 } from "./handlers";
@@ -37,9 +38,7 @@ router.get("/user", authenticate, getUser);
 router.patch(
   "/user",
   body("handle").notEmpty().withMessage("El handle no puede estar vacio"),
-  body("description")
-    .notEmpty()
-    .withMessage("La descripcion no puede estar vacia"),
+
   handleInputErrors,
   authenticate,
   updateProfile
@@ -48,5 +47,13 @@ router.patch(
 router.post("/user/image", authenticate, uploadImage);
 
 router.get("/:handle", getUserByHandle);
+
+router.post(
+  "/search",
+  body("handle").notEmpty().withMessage("El handle no puede estar vacio"),
+  handleInputErrors,
+  //authenticate,
+  searchByHandle
+);
 
 export default router;

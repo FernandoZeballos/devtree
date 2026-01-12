@@ -91,8 +91,6 @@ export default function DevTree({ data }: DevTreeProps) {
             <Link
               className="font-bold text-right text-slate-800 text-2xl"
               to={`/${data.handle}`}
-              target="_blank"
-              rel="noreferrer noopener"
             >
               Visitar Mi Perfil: /{data.handle}
             </Link>

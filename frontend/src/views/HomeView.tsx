@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import SearchForm from "../components/SearchForm";
 
 export default function HomeView() {
   return (
@@ -20,6 +21,7 @@ export default function HomeView() {
               comparte tu perfil de TikTok, Facebook, Instagram, Twitter,
               YouTube, LinkedIn, X, entre otros.
             </p>
+            <SearchForm />
           </div>
         </div>
       </main>

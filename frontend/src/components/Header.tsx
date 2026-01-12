@@ -5,7 +5,6 @@ import Logo from "./Logo";
 
 export default function Header() {
   const location = useLocation();
-  console.log(location);
   return (
     <header className="bg-slate-800 py-5">
       <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center md:justify-between">
